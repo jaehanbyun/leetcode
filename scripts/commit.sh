@@ -29,14 +29,14 @@ PROBLEM_NAME=${TEMP_NAME#"$PROBLEM_NUMBER."}
 PROBLEM_NAME=$(echo "$PROBLEM_NAME" | xargs)
 
 # 파일 이름 생성 (공백을 '_'로 변경)
-FILE_NAME_BASE="${PROBLEM_NUMBER}_$(echo "$PROBLEM_NAME" | tr ' ' '_').py"
+FILE_NAME_BASE="${PROBLEM_NUMBER}_$(echo "$PROBLEM_NAME" | tr ' ' '_').cpp"
 FILE_PATH="${DIFFICULTY_LOWER}/${FILE_NAME_BASE}"
 
 # 난이도의 첫 글자를 대문자로 변경합니다.
 DIFFICULTY_CAPITALIZED="$(tr '[:lower:]' '[:upper:]' <<< ${DIFFICULTY:0:1})${DIFFICULTY:1}"
 
 # 커밋 메시지를 생성합니다.
-COMMIT_MESSAGE="solve #${PROBLEM_NUMBER} ${PROBLEM_NAME} (${DIFFICULTY_CAPITALIZED}) [Python]"
+COMMIT_MESSAGE="solve #${PROBLEM_NUMBER} ${PROBLEM_NAME} (${DIFFICULTY_CAPITALIZED}) [C++]"
 
 # 해당 파일이 존재하는지 확인합니다.
 if [ ! -f "$FILE_PATH" ]; then

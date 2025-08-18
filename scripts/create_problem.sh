@@ -29,7 +29,7 @@ PROBLEM_NAME=${TEMP_NAME#"$PROBLEM_NUMBER."}
 PROBLEM_NAME=$(echo "$PROBLEM_NAME" | xargs)
 
 # 파일 이름 생성 (공백을 '_'로 변경)
-FILE_NAME="${PROBLEM_NUMBER}_$(echo "$PROBLEM_NAME" | tr ' ' '_').py"
+FILE_NAME="${PROBLEM_NUMBER}_$(echo "$PROBLEM_NAME" | tr ' ' '_').cpp"
 
 # 해당 난이도 디렉토리가 없으면 생성합니다.
 if [ ! -d "$DIFFICULTY_LOWER" ]; then
