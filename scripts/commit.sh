@@ -62,3 +62,4 @@ git commit -m "${COMMIT_MESSAGE}"
 
 echo "커밋이 성공적으로 완료되었습니다!"
 
+git push
