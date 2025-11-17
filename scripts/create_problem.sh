@@ -26,7 +26,7 @@ TEMP_NAME=${INPUT_STRING%" $DIFFICULTY"}
 # 그 다음 문제 번호와 뒤의 '.'을 제거합니다.
 PROBLEM_NAME=${TEMP_NAME#"$PROBLEM_NUMBER."}
 # 앞뒤 공백을 제거합니다.
-PROBLEM_NAME=$(echo "$PROBLEM_NAME" | xargs)
+PROBLEM_NAME=$(echo "$PROBLEM_NAME" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
 # 파일 이름 생성 (공백을 '_'로 변경)
 FILE_NAME="${PROBLEM_NUMBER}_$(echo "$PROBLEM_NAME" | tr ' ' '_').cpp"
