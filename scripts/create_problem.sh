@@ -77,3 +77,11 @@ echo "파일 생성: ${FILE_PATH}"
 touch "${FILE_PATH}"
 
 echo "파일이 성공적으로 생성되었습니다!"
+
+# 5. 풀이 코드 붙여넣기
+echo ""
+echo "풀이 코드를 붙여넣으세요 (입력 완료: 빈 줄에서 Ctrl+D):"
+echo "---"
+cat > "${FILE_PATH}"
+echo "---"
+echo "풀이 코드가 ${FILE_PATH}에 저장되었습니다."
