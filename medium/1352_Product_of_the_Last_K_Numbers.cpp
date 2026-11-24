@@ -1,0 +1,29 @@
+class ProductOfNumbers {
+    vector<int> prefix;
+
+public:
+    ProductOfNumbers() {
+        prefix = {1};
+    }
+    
+    void add(int num) {
+        if (num == 0) {
+            prefix = {1};
+        } else {
+            prefix.push_back(prefix[prefix.size()-1] * num);
+        }
+    }
+    
+    int getProduct(int k) {
+        int sz = prefix.size();
+        if (k >= sz) return 0;
+        return prefix[sz-1] / prefix[sz-1-k];
+    }
+};
+
+/**
+ * Your ProductOfNumbers object will be instantiated and called as such:
+ * ProductOfNumbers* obj = new ProductOfNumbers();
+ * obj->add(num);
+ * int param_2 = obj->getProduct(k);
+ */
